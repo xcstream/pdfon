@@ -1,0 +1,27 @@
+{
+  "name": "pdfon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony index.js",
+    "serv": "pm2 start index.js --name pdfon --node-args --harmony "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcstream/pdfon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xcstream/pdfon/issues"
+  },
+  "homepage": "https://github.com/xcstream/pdfon#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "puppeteer": "^1.13.0",
+    "serve-static": "^1.13.2"
+  }
+}
