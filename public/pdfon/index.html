@@ -42,9 +42,6 @@
                     function (rx) {
                         rx.json().then(
                             function (value) {
-                                console.log(value.url)
-                                window.location.href=value.url
-
                                 app.href=value.url
                             }
                         )
