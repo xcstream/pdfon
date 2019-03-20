@@ -15,7 +15,7 @@ s.timeout = 0;
 app.use('/pdfon/create',async (req, res) => {
 
     var url = req.query.url;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']}
     var p = 'pdfon/pdf/' + new Date().getTime()+''+parseInt( Math.random()*1000000)+'.pdf'
     const page = await browser.newPage();
     await page.goto(url);
