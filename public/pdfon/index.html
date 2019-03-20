@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>pdf生成demo</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/element-ui/2.0.7/theme-chalk/index.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/element-ui/2.0.9/index.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="app">
+    输入url生成pdf
+    <div>
+        <el-input v-model="url" style="width:500px">
+
+        </el-input>
+    </div>
+    <el-button @click="go">提交</el-button>
+</div>
+<script>
+    function urlParams(paramName){
+        var reg = new RegExp("[\?&]" + paramName + "=([^&]*)[&]?", "i");
+        var paramVal = window.location.search.match(reg);
+        return paramVal == null ? "" : decodeURIComponent(paramVal[1]);
+    }
+    app=new Vue({
+        el:'#app',
+        data:{
+            url:'https://www.zhihu.com/'
+        },
+        mounted:function(){
+
+        },
+        methods: {
+            go:function(rx){
+                window.location.href = '/pdfon/create?url='+url
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
