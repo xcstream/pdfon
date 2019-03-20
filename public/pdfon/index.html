@@ -16,6 +16,10 @@
         </el-input>
     </div>
     <el-button @click="go">提交</el-button>
+
+    <div v-if="href">
+        <a href="href">{{href}}</a>
+    </div>
 </div>
 <script>
     function urlParams(paramName){
@@ -26,7 +30,8 @@
     app=new Vue({
         el:'#app',
         data:{
-            url:'https://www.zhihu.com/'
+            url:'https://www.zhihu.com/',
+            href:''
         },
         mounted:function(){
 
@@ -39,6 +44,8 @@
                             function (value) {
                                 console.log(value.url)
                                 window.location.href=value.url
+
+                                app.href=value.url
                             }
                         )
                     }
