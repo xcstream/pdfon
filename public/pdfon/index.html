@@ -32,8 +32,17 @@
 
         },
         methods: {
-            go:function(rx){
-                window.location.href = '/pdfon/create?url='+url
+            go:function(){
+                fetch('/pdfon/create?url='+app.url).then(
+                    function (rx) {
+                        rx.json().then(
+                            function (value) {
+                                console.log(value.url)
+                                window.location.href='/'+value.url
+                            }
+                        )
+                    }
+                )
             }
         }
     })
