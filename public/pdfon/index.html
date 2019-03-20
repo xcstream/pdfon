@@ -22,15 +22,10 @@
     </div>
 </div>
 <script>
-    function urlParams(paramName){
-        var reg = new RegExp("[\?&]" + paramName + "=([^&]*)[&]?", "i");
-        var paramVal = window.location.search.match(reg);
-        return paramVal == null ? "" : decodeURIComponent(paramVal[1]);
-    }
     app=new Vue({
         el:'#app',
         data:{
-            url:'https://www.zhihu.com/',
+            url:'https://www.baidu.com/s?wd=百度',
             href:''
         },
         mounted:function(){
@@ -42,7 +37,9 @@
                     function (rx) {
                         rx.json().then(
                             function (value) {
+
                                 app.href=value.url
+
                             }
                         )
                     }
